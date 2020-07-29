@@ -17,7 +17,7 @@ void bfs(int start, vector<int> graph[], bool check[]) {
 
 		int tempQue = q.front();
 		q.pop();
-		cout << tempQue;
+		cout  << tempQue << " ";
 		for (size_t i = 0; i < graph[tempQue].size(); ++i) {
 			if (check[graph[tempQue][i]] == false) {
 				q.push(graph[tempQue][i]);
@@ -30,7 +30,7 @@ void dfs(int start, vector<int> graph[], bool check[]) {
 	stack<int> tempStack; 
 	tempStack.push(start);
 	check[start] = true;
-	cout << " " << start;
+	cout << start;
 
 	while (!tempStack.empty()) {
 		int curr_node = tempStack.top();
@@ -39,7 +39,7 @@ void dfs(int start, vector<int> graph[], bool check[]) {
 			int next_node = graph[curr_node][i];
 
 			if (check[next_node] == false ) {
-				cout << next_node;
+				cout << " " << next_node;
 				check[next_node] = true;
 
 				tempStack.push(curr_node);
@@ -67,7 +67,7 @@ int main()
 
 	vector<int>* graph = new vector<int>[n + 1];
 
-	bool check[100];
+	bool check[10001];
 	fill(check, check + n + 1, false);
 
 	for (size_t i = 0; i < m; ++i) {
